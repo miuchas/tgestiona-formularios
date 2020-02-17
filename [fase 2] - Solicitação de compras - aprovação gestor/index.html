@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            .anexo-obrigatorio {
+                box-shadow: 0px 1px 10px #dc7373;
+            }
+
+            .compras #tabelaHistorico_wrapper td {
+                /* font-size: 15px; */
+                padding: 5px;
+            }
+
+            .compras legend {
+                border-bottom: 1px solid black;
+            }
+
+            .compras ul.abas {
+                border-bottom: 1px solid #dcdddc;
+                padding-left: 10px;
+            }
+
+            .compras ul.abas li {
+                list-style-type: none;
+                display: inline-block;
+                border-top: 1px solid #dcdddc;
+                border-right: 1px solid #dcdddc;
+                border-left: 1px solid #dcdddc;
+                padding: 10px;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+
+            .compras .abas a {
+                text-decoration: none;
+            }
+
+            .compras label {
+                width: 100%;
+                color: #004791;
+                font-weight: bold;
+            }
+
+            .compras .portlet-body {
+                background: rgba(255, 255, 255, 1);
+                background: -moz-linear-gradient(
+                    45deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(242, 245, 248, 1) 20%,
+                    rgba(255, 255, 255, 1) 20%,
+                    rgba(255, 255, 255, 1) 21%,
+                    rgba(242, 245, 248, 1) 34%,
+                    rgba(242, 245, 248, 1) 51%,
+                    rgba(255, 255, 255, 1) 51%,
+                    rgba(242, 245, 248, 1) 77%,
+                    rgba(255, 255, 255, 1) 77%,
+                    rgba(242, 245, 248, 1) 98%,
+                    rgba(255, 255, 255, 1) 100%
+                );
+                background: -webkit-gradient(
+                    left bottom,
+                    right top,
+                    color-stop(0%, rgba(255, 255, 255, 1)),
+                    color-stop(20%, rgba(242, 245, 248, 1)),
+                    color-stop(20%, rgba(255, 255, 255, 1)),
+                    color-stop(21%, rgba(255, 255, 255, 1)),
+                    color-stop(34%, rgba(242, 245, 248, 1)),
+                    color-stop(51%, rgba(242, 245, 248, 1)),
+                    color-stop(51%, rgba(255, 255, 255, 1)),
+                    color-stop(77%, rgba(242, 245, 248, 1)),
+                    color-stop(77%, rgba(255, 255, 255, 1)),
+                    color-stop(98%, rgba(242, 245, 248, 1)),
+                    color-stop(100%, rgba(255, 255, 255, 1))
+                );
+                background: -webkit-linear-gradient(
+                    45deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(242, 245, 248, 1) 20%,
+                    rgba(255, 255, 255, 1) 20%,
+                    rgba(255, 255, 255, 1) 21%,
+                    rgba(242, 245, 248, 1) 34%,
+                    rgba(242, 245, 248, 1) 51%,
+                    rgba(255, 255, 255, 1) 51%,
+                    rgba(242, 245, 248, 1) 77%,
+                    rgba(255, 255, 255, 1) 77%,
+                    rgba(242, 245, 248, 1) 98%,
+                    rgba(255, 255, 255, 1) 100%
+                );
+                background: -o-linear-gradient(
+                    45deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(242, 245, 248, 1) 20%,
+                    rgba(255, 255, 255, 1) 20%,
+                    rgba(255, 255, 255, 1) 21%,
+                    rgba(242, 245, 248, 1) 34%,
+                    rgba(242, 245, 248, 1) 51%,
+                    rgba(255, 255, 255, 1) 51%,
+                    rgba(242, 245, 248, 1) 77%,
+                    rgba(255, 255, 255, 1) 77%,
+                    rgba(242, 245, 248, 1) 98%,
+                    rgba(255, 255, 255, 1) 100%
+                );
+                background: -ms-linear-gradient(
+                    45deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(242, 245, 248, 1) 20%,
+                    rgba(255, 255, 255, 1) 20%,
+                    rgba(255, 255, 255, 1) 21%,
+                    rgba(242, 245, 248, 1) 34%,
+                    rgba(242, 245, 248, 1) 51%,
+                    rgba(255, 255, 255, 1) 51%,
+                    rgba(242, 245, 248, 1) 77%,
+                    rgba(255, 255, 255, 1) 77%,
+                    rgba(242, 245, 248, 1) 98%,
+                    rgba(255, 255, 255, 1) 100%
+                );
+                background: linear-gradient(
+                    45deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(242, 245, 248, 1) 20%,
+                    rgba(255, 255, 255, 1) 20%,
+                    rgba(255, 255, 255, 1) 21%,
+                    rgba(242, 245, 248, 1) 34%,
+                    rgba(242, 245, 248, 1) 51%,
+                    rgba(255, 255, 255, 1) 51%,
+                    rgba(242, 245, 248, 1) 77%,
+                    rgba(255, 255, 255, 1) 77%,
+                    rgba(242, 245, 248, 1) 98%,
+                    rgba(255, 255, 255, 1) 100%
+                );
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+            }
+
+            .form-compra input,
+            .form-compra select,
+            .form-compra textarea,
+            .form-solicitante input,
+            .form-solicitante select,
+            .form-solicitante textarea {
+                margin-bottom: 40px;
+            }
+
+            .table input {
+                margin-bottom: 0;
+            }
+
+            .compras .table td {
+                padding: 0;
+            }
+
+            .compras .portlet-title {
+                background: rgba(229, 240, 110, 1);
+                background: -moz-linear-gradient(
+                    top,
+                    rgba(229, 240, 110, 1) 0%,
+                    rgba(206, 221, 70, 1) 25%,
+                    rgba(206, 221, 70, 1) 74%,
+                    rgba(214, 219, 120, 1) 100%
+                );
+                background: -webkit-gradient(
+                    left top,
+                    left bottom,
+                    color-stop(0%, rgba(229, 240, 110, 1)),
+                    color-stop(25%, rgba(206, 221, 70, 1)),
+                    color-stop(74%, rgba(206, 221, 70, 1)),
+                    color-stop(100%, rgba(214, 219, 120, 1))
+                );
+                background: -webkit-linear-gradient(
+                    top,
+                    rgba(229, 240, 110, 1) 0%,
+                    rgba(206, 221, 70, 1) 25%,
+                    rgba(206, 221, 70, 1) 74%,
+                    rgba(214, 219, 120, 1) 100%
+                );
+                background: -o-linear-gradient(
+                    top,
+                    rgba(229, 240, 110, 1) 0%,
+                    rgba(206, 221, 70, 1) 25%,
+                    rgba(206, 221, 70, 1) 74%,
+                    rgba(214, 219, 120, 1) 100%
+                );
+                background: -ms-linear-gradient(
+                    top,
+                    rgba(229, 240, 110, 1) 0%,
+                    rgba(206, 221, 70, 1) 25%,
+                    rgba(206, 221, 70, 1) 74%,
+                    rgba(214, 219, 120, 1) 100%
+                );
+                background: linear-gradient(
+                    to bottom,
+                    rgba(229, 240, 110, 1) 0%,
+                    rgba(206, 221, 70, 1) 25%,
+                    rgba(206, 221, 70, 1) 74%,
+                    rgba(214, 219, 120, 1) 100%
+                );
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5f06e', endColorstr='#d6db78', GradientType=0 );
+                border: 1px solid #d3dcc8;
+            }
+
+            .campo-obrigatorio {
+                box-shadow: 0px 0px 7px 2px #cb4949;
+            }
+
+            .tabela-grid {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .abaMover {
+                border: 1px solid #dedede;
+                height: 25px;
+                width: 15px;
+                text-align: right;
+                float: right;
+                background: #efefef;
+            }
+
+            .tabela-cronograma td {
+                border-right: 0.03px solid white;
+            }
+
+            .cor_atividade {
+                background: rgb(248, 98, 41);
+            }
+
+            .atividade {
+                height: 20px;
+            }
+
+            .grid_dll {
+                width: fit-content;
+            }
+
+            .processo {
+                height: 13px;
+            }
+
+            .processo.bg-success {
+                background-color: #fcfb00 !important;
+            }
+
+            #cronograma td[class*='td1'] input,
+            #cronograma td[class*='td6'] input,
+            #cronograma td[class*='td7'] input {
+                width: 60px;
+            }
+
+            #cronograma td[class*='td2'] input {
+                width: 170px;
+            }
+
+            #cronograma td[class*='td3'] input {
+                width: 110px;
+            }
+
+            #cronograma td[class*='td4'] input,
+            #cronograma td[class*='td5'] input {
+                width: 110px;
+            }
+
+            #cronograma td[class*='td'] input,
+            #cronograma td[class='acoes'] [data-js*='cronograma_tr'] {
+                height: 34.3px;
+            }
+
+            #numeroRv td[class*='td1'] input {
+                min-width: 200px;
+                height: 36px;
+            }
+
+            #cronograma td[class='acoes'] [data-js*='cronograma_tr'] {
+                line-height: 1.6;
+            }
+
+            #numeroRv td[class='acoes'] [data-js*='numeroRv_tr'] {
+                line-height: 1.6;
+                width: 50px;
+            }
+
+            .vr-acaoes {
+                width: 60px;
+                justify-content: center;
+            }
+
+            #numeroRv [data-js*='numeroRv'] {
+                width: 100px;
+            }
+
+            .table-cronograma {
+                border: 1px solid #a4a2a2;
+            }
+
+            .table-cronograma .th_mother-ano th {
+                padding: 30px 10px 10px 10px;
+                font-size: 1.5em;
+                color: #686e73;
+                border: #a4a2a2;
+                border: 2px solid #a4a2a2;
+            }
+
+            .table-cronograma .th_dias-semana th {
+                padding: 1px 6.2px 1px 6.2px;
+                width: 60px;
+                text-align: center;
+                font-size: 1.2em;
+                color: #583f3d;
+                border: 2px solid #a4a2a2;
+            }
+
+            .table-cronograma tbody td {
+                border: 2px solid #a4a2a2;
+                padding-top: 1px;
+                padding-bottom: 2px;
+            }
+
+            .btn-scroll {
+                display: flex;
+                position: fixed;
+                text-align: right;
+            }
+
+            .btn-scroll span {
+                height: 30px;
+                width: 30px;
+                margin: 2px 3px 4px 5px;
+                border: 1px solid #b5b5b2ab;
+                border-radius: 5px;
+                line-height: 2;
+                text-align: center;
+                cursor: pointer;
+                /* font-size: 1.2em; */
+                box-shadow: 1px 2px 2px 0px rgba(135, 125, 125, 0.5);
+            }
+
+            .btn-primary {
+                color: white !important;
+            }
+
+            .col-sm-12.tabela-grid-conograma {
+                width: fit-content;
+            }
+
+            .sweet-alert,
+            .sweet-overlay {
+                z-index: 30000;
+            }
+
+            .no--uppercase {
+                text-transform: none !important;
+            }
+
+            #tabelaHistorico_filter {
+                float: right;
+            }
+        </style>
+
+        <script id="scriptInput" type="text/javascript">
+            $('body').ready(function() {
+                $(document).ajaxComplete(function() {
+                    $('body .formulario-upload').each(function() {
+                        var input = $(this);
+                        var ck = $(this).parent();
+                        if (ck.length > 0) {
+                            $('.tipoAnexoId').each(function() {
+                                var id = $(this).data('tipo-anexo-id');
+                                if (id == input.data('tipo-anexo-id')) {
+                                    ck.removeClass(
+                                        'fa-ban font-red-thunderbird'
+                                    );
+                                    ck.addClass('fa-check font-green-jungle');
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="compras container-fluid" style="padding: 0">
+            <div class="col-md-12" style="padding: 0">
+                <!-- BEGIN Portlet PORTLET-->
+                <div class="portlet box blue-hoki">
+                    <div class="portlet-title">
+                        <div class="caption" style="color: #004791;">
+                            <i class="fa fa-gift"></i>Solicita&ccedil;&atilde;o
+                            de Compras
+                        </div>
+
+                        <div class="actions">&nbsp;</div>
+                    </div>
+
+                    <div class="portlet-body">
+                        <div
+                            class="slimScrollDiv scrollDiv"
+                            style="position: relative; overflow: hidden; width: auto; height: auto"
+                        >
+                            <div
+                                class="scroller"
+                                data-handle-color="#a1b2bd"
+                                data-initialized="1"
+                                data-rail-color="yellow"
+                                data-rail-visible="1"
+                                style="height: auto; overflow: hidden; width: auto;"
+                            >
+                                <form role="form" style="padding: 10px">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div
+                                                class="form-group"
+                                                style="margin-bottom: 100px"
+                                            >
+                                                <div class="col-sm-3">
+                                                    <span
+                                                        class="h-card"
+                                                        data-campo-altura="10"
+                                                        data-campo-classe="form-control"
+                                                        data-campo-estilo=""
+                                                        data-campo-largura="200"
+                                                        ><span
+                                                            class="form-group form-md-line-input  "
+                                                            ><label
+                                                                for="CAMPO_9"
+                                                                >N&ordm;
+                                                                Solicita&ccedil;&atilde;o<!-- label--><input
+                                                                    class="form-control"
+                                                                    data-campo-id="@@9@@"
+                                                                    id="CAMPO_9"
+                                                                    style="width: auto; border-bottom: none;"
+                                                                    type="text"/></label></span
+                                                    ></span>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <span
+                                                        class="h-card"
+                                                        data-campo-altura="10"
+                                                        data-campo-classe="form-control"
+                                                        data-campo-estilo=""
+                                                        data-campo-largura="200"
+                                                        ><span
+                                                            class="form-group form-md-line-input  "
+                                                            ><label
+                                                                for="CAMPO_10"
+                                                                >Data da
+                                                                Solicita&ccedil;&atilde;o<!-- label--><input
+                                                                    class="form-control"
+                                                                    data-campo-id="@@10@@"
+                                                                    id="CAMPO_10"
+                                                                    style="width: auto; border-bottom: none;"
+                                                                    type="text"/></label></span
+                                                    ></span>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <span
+                                                        class="h-card"
+                                                        data-campo-altura="10"
+                                                        data-campo-classe="form-control"
+                                                        data-campo-estilo=""
+                                                        data-campo-largura="200"
+                                                        ><span
+                                                            class="form-group form-md-line-input  "
+                                                            ><label
+                                                                for="CAMPO_1"
+                                                                >Usu&aacute;rio
+                                                                Logado<!-- label--><input
+                                                                    class="form-control"
+                                                                    data-campo-id="@@1@@"
+                                                                    id="CAMPO_1"
+                                                                    style="width: auto; border-bottom: none;"
+                                                                    type="text"/></label></span
+                                                    ></span>
+
+                                                    <div
+                                                        class="form-control-focus"
+                                                    >
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <span
+                                                        class="h-card"
+                                                        data-campo-altura="10"
+                                                        data-campo-classe="form-control"
+                                                        data-campo-estilo=""
+                                                        data-campo-largura="200"
+                                                        ><span
+                                                            class="form-group form-md-line-input  "
+                                                            ><label
+                                                                for="CAMPO_2"
+                                                                >Departamento<!-- label--><input
+                                                                    class="form-control"
+                                                                    data-campo-id="@@2@@"
+                                                                    id="CAMPO_2"
+                                                                    style="width: auto; border-bottom: none;"
+                                                                    type="text"/></label></span
+                                                    ></span>
+
+                                                    <div
+                                                        class="form-control-focus"
+                                                    >
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display:none">
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@59@@"
+                                                        id="@@59@@"
+                                                        placeholder=" "
+                                                        style="width:200px;"
+                                                        type="text"/></span></span
+                                            ><span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@58@@"
+                                                        id="@@58@@"
+                                                        placeholder=" "
+                                                        style="width:200px;"
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+
+                                        <hr />
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="form-row">
+                                <ul class="abas">
+                                    <li>
+                                        <a class="aba aba-solicitante" href="#"
+                                            >Dados da Solicitante</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a class="aba aba-compra" href="#"
+                                            >Dados da Compra</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--DADOS DO SOLICITANTE-->
+
+                            <div
+                                class="form-group form-solicitante"
+                                style="margin-bottom: 70px"
+                            >
+                                <fieldset>
+                                    <legend>Dados do Solicitante</legend>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label>RE</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@36@@"
+                                                        id="CAMPO_36"
+                                                        placeholder=" "
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>Nome</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@37@@"
+                                                        id="CAMPO_37"
+                                                        placeholder=" "
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label>E-mail</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@38@@"
+                                                        id="@@38@@"
+                                                        placeholder=" "
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>Telefone</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@39@@"
+                                                        id="@@39@@"
+                                                        placeholder=" "
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+                                        <div
+                                            class="col-sm-6"
+                                            style="padding-left: 0"
+                                        >
+                                            <label>&Aacute;rea</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@40@@"
+                                                        id="CAMPO_40"
+                                                        placeholder=" "
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <!--fim dados do solicitante--><!--DADOS DA COMPRA-->
+
+                            <div
+                                class="form-group form-compra"
+                                style="margin-bottom: 70px"
+                            >
+                                <fieldset>
+                                    <legend>
+                                        Informa&ccedil;&otilde;es gerais
+                                    </legend>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label>Empresa </label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><select
+                                                        class="form-control"
+                                                        data-campo-id="@@11@@"
+                                                        id="@@11@@"
+                                                        ><option
+                                                            placeholder="11 - Empresa"
+                                                            >11 -
+                                                            Empresa</option
+                                                        ><option value="Valor02"
+                                                            >Valor 02</option
+                                                        >
+                                                    </select></span
+                                                ></span
+                                            >
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>Tipo de Compra</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><select
+                                                        class="form-control"
+                                                        data-campo-id="@@12@@"
+                                                        id="@@12@@"
+                                                        ><option
+                                                            placeholder="12 - Tipo de Compra"
+                                                            >12 - Tipo de
+                                                            Compra</option
+                                                        ><option value="Valor02"
+                                                            >Valor 02</option
+                                                        >
+                                                    </select></span
+                                                ></span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label>Modelo de Compra</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><select
+                                                        class="form-control"
+                                                        data-campo-id="@@13@@"
+                                                        id="CAMPO_13"
+                                                        ><option
+                                                            placeholder="13 - Modelo de Compra"
+                                                            >13 - Modelo de
+                                                            Compra</option
+                                                        ><option value="Valor02"
+                                                            >Valor 02</option
+                                                        >
+                                                    </select></span
+                                                ></span
+                                            >
+                                        </div>
+
+                                        <div class="col-sm-6 acm_tbra">
+                                            <label>ACM TBRA</label>
+                                            <span
+                                                class="h-card acm_tbr"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control inteiro"
+                                                        data-campo-id="@@50@@"
+                                                        id="@@50@@"
+                                                        maxlength="10"
+                                                        placeholder=" "
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>
+                                        Informa&ccedil;&otilde;es Sobre o
+                                        Projeto
+                                    </legend>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label>Nome de Projeto</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><input
+                                                        class="form-control"
+                                                        data-campo-id="@@15@@"
+                                                        id="@@15@@"
+                                                        placeholder=" "
+                                                        type="text"/></span
+                                            ></span>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>Estrutura Beneficiada</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><select
+                                                        class="form-control"
+                                                        data-campo-id="@@16@@"
+                                                        disabled="disabled"
+                                                        id="CAMPO_16"
+                                                        required=""
+                                                        ><option
+                                                            placeholder="16 - Estrutura Beneficiada"
+                                                            >16 - Estrutura
+                                                            Beneficiada</option
+                                                        ><option value="Valor02"
+                                                            >Valor 02</option
+                                                        >
+                                                    </select></span
+                                                ></span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label
+                                                >&Aacute;rea Beneficiada</label
+                                            >
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><select
+                                                        class="form-control"
+                                                        data-campo-id="@@17@@"
+                                                        id="CAMPO_17"
+                                                        required=""
+                                                        ><option
+                                                            placeholder="17 - Área beneficiada"
+                                                            >17 - &Aacute;rea
+                                                            beneficiada</option
+                                                        ><option value="Valor02"
+                                                            >Valor 02</option
+                                                        >
+                                                    </select></span
+                                                ></span
+                                            >
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>Gestor do Contrato</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group form-md-line-input "
+                                                    ><select
+                                                        class="form-control"
+                                                        data-campo-id="@@68@@"
+                                                        id="CAMPO_68"
+                                                        required=""
+                                                        ><option
+                                                            placeholder="68 - Gestor do Contrato"
+                                                            >68 - Gestor do
+                                                            Contrato</option
+                                                        ><option value="Valor02"
+                                                            >Valor 02</option
+                                                        >
+                                                    </select></span
+                                                ></span
+                                            >
+
+                                            <div style="display:none">
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:none;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@19@@"
+                                                            id="@@19@@"
+                                                            placeholder=" "
+                                                            type="text"/></span
+                                                ></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label>Objeto</label>
+                                            <span
+                                                class="h-card"
+                                                data-campo-altura="10"
+                                                data-campo-classe=""
+                                                data-campo-estilo=""
+                                                data-campo-largura="200"
+                                                style="display:block;"
+                                                ><span
+                                                    class="form-group  "
+                                                    ><textarea
+                                                        class="form-control"
+                                                        cols="60"
+                                                        data-campo-id="@@18@@"
+                                                        id="@@18@@"
+                                                        name="message"
+                                                        placeholder="18 - Objeto"
+                                                        rows="10"
+                                                    >
+                                                    </textarea></span
+                                            ></span>
+                                        </div>
+
+                                        <div class="col-sm-6">&nbsp;</div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>
+                                        Dados dos Fornecedores Envolvidos
+                                    </legend>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">&nbsp;</div>
+                                        <label
+                                            >Sele&ccedil;&atilde;o de
+                                            Fornecedores</label
+                                        >
+                                        <span
+                                            class="h-card"
+                                            data-campo-altura="10"
+                                            data-campo-classe=""
+                                            data-campo-estilo=""
+                                            data-campo-largura="200"
+                                            style="display:block;"
+                                            ><span
+                                                class="form-group form-md-line-input "
+                                                ><select
+                                                    class="form-control"
+                                                    data-campo-id="@@20@@"
+                                                    id="@@20@@"
+                                                    ><option
+                                                        placeholder="20 - Seleção de Fornecedores"
+                                                        >20 -
+                                                        Sele&ccedil;&atilde;o de
+                                                        Fornecedores</option
+                                                    ><option value="Valor02"
+                                                        >Valor 02</option
+                                                    >
+                                                </select></span
+                                            ></span
+                                        >
+
+                                        <div class="col-sm-6">&nbsp;</div>
+                                    </div>
+
+                                    <div
+                                        class="form-group col-sm-12"
+                                        style="padding-left: 0; margin-bottom: 40px"
+                                    >
+                                        <button
+                                            class="indicacao btn btn-primary"
+                                        >
+                                            Indica&ccedil;&atilde;o de
+                                            fornecedor?
+                                        </button>
+                                    </div>
+
+                                    <div class="dados-fornecedor-indicado">
+                                        <div
+                                            class="form-group col-sm-12"
+                                            style="padding-left: 0;"
+                                        >
+                                            <div class="col-sm-6">
+                                                <label
+                                                    >Raz&atilde;o Social</label
+                                                ><span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@51@@"
+                                                            id="@@51@@"
+                                                            placeholder=" "
+                                                            type="text"/></span
+                                                ></span>
+                                            </div>
+
+                                            <div class="col-sm-6">&nbsp;</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <label
+                                                    >CNPJ do fornecedor</label
+                                                >
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@22@@"
+                                                            id="@@22@@"
+                                                            placeholder=" "
+                                                            type="text"/></span
+                                                ></span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label
+                                                    >Pessoa para contato</label
+                                                >
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@23@@"
+                                                            id="@@23@@"
+                                                            placeholder=" "
+                                                            type="text"/></span
+                                                ></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <label
+                                                    >Telefone para
+                                                    contato</label
+                                                >
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@35@@"
+                                                            id="@@35@@"
+                                                            placeholder=" "
+                                                            type="text"/></span
+                                                ></span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label
+                                                    >Email para contato</label
+                                                >
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@24@@"
+                                                            id="@@24@@"
+                                                            placeholder=" "
+                                                            type="text"/></span
+                                                ></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>Dados do Contrato</legend>
+
+                                    <div class="form-group">
+                                        <div
+                                            class="col-sm-5"
+                                            style="padding-left: 0"
+                                        >
+                                            <div
+                                                class="form-group  col-sm-12"
+                                                style="padding-left: 0; margin-bottom:0"
+                                            >
+                                                <div
+                                                    class="col-sm-6"
+                                                    style="padding-left: 0;"
+                                                >
+                                                    <label
+                                                        >N&uacute;mero do
+                                                        Contrato SAP</label
+                                                    >
+                                                    <span
+                                                        class="h-card"
+                                                        data-campo-altura="10"
+                                                        data-campo-classe=""
+                                                        data-campo-estilo=""
+                                                        data-campo-largura="200"
+                                                        style="display:block;"
+                                                        ><span
+                                                            class="form-group form-md-line-input "
+                                                            ><input
+                                                                class="form-control"
+                                                                data-campo-id="@@52@@"
+                                                                id="@@52@@"
+                                                                placeholder=" "
+                                                                type="text"/></span
+                                                    ></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <table class="table table-striped table-bordered table-hover grid_dll"id="numeroRv">
+                                                    <thead>
+                                                        <tr data-cabecalho-container="">
+                                                            <th data-elem="input" data-type="text" scope="col">
+                                                                N&uacute;mero da RV
+                                                            </th>
+                                                            <!-- <th class="vr-acaoes" scope="col">
+                                                                A&ccedil;&otilde;es
+                                                            </th> -->
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="inputs" data-corpo-container=""></tbody>
+
+                                                    <!-- <tfoot>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <label
+                                                                    class="btn btn-primary js-addNumeroRv"
+                                                                    data-js="numeroRv"
+                                                                    width="100">
+                                                                    adicionar
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot> -->
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>
+                                        Informa&ccedil;&otilde;es de Prazos e
+                                        Prorroga&ccedil;&otilde;es
+                                    </legend>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <h4>Vig&ecirc;ncia</h4>
+
+                                            <div
+                                                class="col-sm-6"
+                                                style="padding-left:0;"
+                                            >
+                                                <label>De:</label>
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@28@@"
+                                                            id="@@28@@"
+                                                            placeholder="28 - De (vigência)"
+                                                            type="date"/></span
+                                                ></span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label>At&eacute;:</label>
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@29@@"
+                                                            id="@@29@@"
+                                                            placeholder="29 - até (vigência)"
+                                                            type="date"/></span
+                                                ></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <h4>
+                                                Vig&ecirc;ncia p&oacute;s
+                                                Prorroga&ccedil;&atilde;o
+                                            </h4>
+
+                                            <div
+                                                class="col-sm-6"
+                                                style="padding-left:0;"
+                                            >
+                                                <label>De:</label>
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="  display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@30@@"
+                                                            id="@@30@@"
+                                                            placeholder="30 - de (vigência pós prorrogação)"
+                                                            type="date"/></span
+                                                ></span>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label>At&eacute;:</label>
+                                                <span
+                                                    class="h-card"
+                                                    data-campo-altura="10"
+                                                    data-campo-classe=""
+                                                    data-campo-estilo=""
+                                                    data-campo-largura="200"
+                                                    style="display:block;"
+                                                    ><span
+                                                        class="form-group form-md-line-input "
+                                                        ><input
+                                                            class="form-control"
+                                                            data-campo-id="@@31@@"
+                                                            id="@@31@@"
+                                                            placeholder="31 - até (vigência final pós prorrogação)"
+                                                            type="date"/></span
+                                                ></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="field-anexos">
+                                    <legend>Anexos</legend>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label
+                                                class="btn btn-light label-input-file"
+                                                for="MEMORANDO-CONDICIONAMENTO"
+                                                >M. Condicionamento</label
+                                            ><span
+                                                class="h-card fa fa-ban font-red-thunderbird"
+                                                style="display: none;"
+                                                ><i></i
+                                                ><input
+                                                    class="file-path formulario-upload validate "
+                                                    converterparaimagem="false"
+                                                    data-arquivo-nome=""
+                                                    data-tipo-anexo-id="4"
+                                                    id="MEMORANDO-CONDICIONAMENTO"
+                                                    multiple="multiple"
+                                                    name="MEMORANDO-CONDICIONAMENTO"
+                                                    style="display: inline-block;"
+                                                    type="file"
+                                            /></span>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <label
+                                                class="btn btn-light label-input-file"
+                                                for="PROJETO-BASICO"
+                                                >Projeto B&aacute;sico</label
+                                            ><span
+                                                class="h-card fa fa-ban font-red-thunderbird"
+                                                style="display: none;"
+                                                ><i></i
+                                                ><input
+                                                    class="file-path formulario-upload validate "
+                                                    converterparaimagem="false"
+                                                    data-arquivo-nome=""
+                                                    data-tipo-anexo-id="5"
+                                                    id="PROJETO-BASICO"
+                                                    multiple="multiple"
+                                                    name="PROJETO-BASICO"
+                                                    style="display: inline-block;"
+                                                    type="file"
+                                            /></span>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <label
+                                                class="btn btn-light label-input-file"
+                                                for="PXQ"
+                                                >Pxq</label
+                                            ><span
+                                                class="h-card fa fa-ban font-red-thunderbird"
+                                                style="display: none;"
+                                                ><i></i
+                                                ><input
+                                                    class="file-path formulario-upload validate "
+                                                    converterparaimagem="false"
+                                                    data-arquivo-nome=""
+                                                    data-tipo-anexo-id="6"
+                                                    id="PXQ"
+                                                    multiple="multiple"
+                                                    name="PXQ"
+                                                    style="display: inline-block;"
+                                                    type="file"
+                                            /></span>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <label
+                                                class="btn btn-light label-input-file"
+                                                for="ACORDO-CDG"
+                                                >De Acordo Cdg</label
+                                            ><span
+                                                class="h-card fa fa-ban font-red-thunderbird"
+                                                style="display: none;"
+                                                ><i></i
+                                                ><input
+                                                    class="file-path formulario-upload validate "
+                                                    converterparaimagem="false"
+                                                    data-arquivo-nome=""
+                                                    data-tipo-anexo-id="10"
+                                                    id="ACORDO-CDG"
+                                                    multiple="multiple"
+                                                    name="ACORDO-CDG"
+                                                    style="display: inline-block;"
+                                                    type="file"
+                                            /></span>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <label
+                                                class="btn btn-light label-input-file"
+                                                for="RV-APROVADA"
+                                                >rv Aprovada</label
+                                            ><span
+                                                class="h-card fa fa-ban font-red-thunderbird"
+                                                style="display: none;"
+                                                ><i></i
+                                                ><input
+                                                    class="file-path formulario-upload validate "
+                                                    converterparaimagem="false"
+                                                    data-arquivo-nome=""
+                                                    data-tipo-anexo-id="9"
+                                                    id="RV-APROVADA"
+                                                    multiple="multiple"
+                                                    name="RV-APROVADA"
+                                                    style="display: inline-block;"
+                                                    type="file"
+                                            /></span>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <label
+                                                class="btn btn-light label-input-file"
+                                                for="OUTROS-ANEXOS"
+                                                >Outros Anexos</label
+                                            ><span
+                                                class="h-card fa fa-ban font-red-thunderbird"
+                                                style="display: none;"
+                                                ><i></i
+                                                ><input
+                                                    class="file-path formulario-upload validate "
+                                                    converterparaimagem="false"
+                                                    data-arquivo-nome=""
+                                                    data-tipo-anexo-id="7"
+                                                    id="OUTROS-ANEXOS"
+                                                    multiple="multiple"
+                                                    name="OUTROS-ANEXOS"
+                                                    style="display: inline-block;"
+                                                    type="file"
+                                            /></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <!--fim dados da compra-->
+
+                            <fieldset class="historico">
+                                <legend>Hist&oacute;rico</legend>
+
+                                <div class="col-sm-6">
+                                    <label>Observa&ccedil;&otilde;es</label
+                                    ><textarea
+                                        class="form-control"
+                                        cols="60"
+                                        id="obs"
+                                        rows="5"
+                                    ></textarea>
+                                </div>
+
+                                <div
+                                    class="col-sm-12"
+                                    id="templateTabelaHistorico"
+                                    style="margin-top: 30px"
+                                >
+                                    <fieldset>
+                                        <legend>Hist&oacute;rico</legend>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table
+                                                    class="table table-striped table-bordered"
+                                                    id="tabelaHistorico"
+                                                >
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th
+                                                                colspan="1"
+                                                                data-column-index="0"
+                                                                rowspan="1"
+                                                                style="width: 10%;"
+                                                                tabindex="0"
+                                                            >
+                                                                Data Hora
+                                                            </th>
+                                                            <th
+                                                                colspan="1"
+                                                                data-column-index="1"
+                                                                rowspan="1"
+                                                                style="width: 15%;"
+                                                                tabindex="0"
+                                                            >
+                                                                Usu&aacute;rio
+                                                            </th>
+                                                            <th
+                                                                colspan="1"
+                                                                data-column-index="1"
+                                                                rowspan="1"
+                                                                style="width: 60%;"
+                                                                tabindex="0"
+                                                            >
+                                                                Hist&oacute;rico
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <span
+                                    class="h-card"
+                                    data-campo-altura="10"
+                                    data-campo-classe=""
+                                    data-campo-estilo=""
+                                    data-campo-largura="200"
+                                    style="display:block;"
+                                    ><span
+                                        class="form-group form-md-line-input "
+                                        ><input
+                                            class="form-control"
+                                            data-campo-id="@@49@@"
+                                            id="@@49@@"
+                                            placeholder="49 - Data SLA"
+                                            style="display: none; width:200px;"
+                                            type="date"/></span
+                                ></span>
+
+                                <div style="display: none;">
+                                    <span
+                                        class="h-card"
+                                        data-campo-altura="10"
+                                        data-campo-classe=""
+                                        data-campo-estilo=""
+                                        data-campo-html="1"
+                                        data-campo-largura="200"
+                                        style="display:block;"
+                                        ><span
+                                            class="form-group form-md-line-input "
+                                            ><textarea
+                                                class="form-control"
+                                                cols="60"
+                                                data-campo-id="@@34@@"
+                                                id="CAMPO_34"
+                                                name="message"
+                                                placeholder="34 - Historico"
+                                                rows="10"
+                                            >
+                                            </textarea></span
+                                    ></span>
+                                </div>
+                            </fieldset>
+
+                            <div
+                                class="slimScrollBar"
+                                style="background: rgb(161, 178, 189); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 124.611px;"
+                            >
+                                &nbsp;
+                            </div>
+
+                            <div
+                                class="slimScrollRail"
+                                style="width: 7px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: yellow; opacity: 0.2; z-index: 90; right: 1px; display: none;"
+                            >
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: none">
+                        <span
+                            class="h-card"
+                            data-campo-altura="10"
+                            data-campo-classe=""
+                            data-campo-estilo=""
+                            data-campo-largura="200"
+                            style="display:none;"
+                            ><span
+                                class="form-group form-md-line-input "
+                                ><input
+                                    class="form-control"
+                                    data-campo-id="@@62@@"
+                                    id="@@62@@"
+                                    placeholder=" "
+                                    style="width:200px;"
+                                    type="text"/></span
+                        ></span>
+
+                        <div style="display: none">
+                            <span
+                                class="h-card"
+                                data-campo-altura="10"
+                                data-campo-classe=""
+                                data-campo-estilo=""
+                                data-campo-largura="200"
+                                style="display:block;"
+                                ><span
+                                    class="form-group form-md-line-input "
+                                    ><input
+                                        class="form-control"
+                                        data-campo-id="@@57@@"
+                                        id="@@57@@"
+                                        placeholder=" "
+                                        style="width:200px;"
+                                        type="text"/></span
+                            ></span>
+                        </div>
+
+                        <div class="form-group" style="display: none;">
+                            <label for="CAMPO_69">69 - gestorAprovadorId</label
+                            ><input
+                                class="form-control"
+                                data-campo-id="@@69@@"
+                                data-nome="69 - gestorAprovadorId"
+                                data-tipo-documental-id="35"
+                                id="CAMPO_69"
+                                type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <!-- END Portlet PORTLET-->
+            </div>
+        </div>
+
+        <script>
+            //arquivo formulario.tabelaGrid escuta esse evento
+            var tabelaGrid = new FormularioTabelaGrid();
+
+            tabelaGrid.setConfigTabela({
+                nameTable: 'numeroRv',
+                readOnly: true,
+                enableExclusion: false
+            });
+
+            var FormularioAprovacaoGestor = (function () {
+
+                var controles = {
+                    addNumeroRv: '.js-addNumeroRv',
+
+                    inputs: {
+                        campo01: '#CAMPO_1',
+                        campo02: '#CAMPO_2',
+                        campo09: '#CAMPO_9',
+                        campo10: '#CAMPO_10',
+                        campo13: '#CAMPO_13',
+                        campo16: '#CAMPO_16',
+                        campo17: '#CAMPO_17',
+                        campo30: '#CAMPO_30',
+                        campo31: '#CAMPO_31',
+                        campo36: '#CAMPO_36',
+                        campo37: '#CAMPO_37',
+                        campo68: '#CAMPO_68',
+                        campo69: '#CAMPO_69'
+                    }
+                };
+
+                var contadorFuncao = 0; //HISTORICO
+                var contadorGravarHist = 0; //GRAVAR DADOS NO HISTORICO
+                var anexosRealizados = new Set();
+                var anexosObrigatorios = new Set();
+                var solicitacaoAtv1 = null;
+
+                function init () {
+                    FormularioAnexo.init();
+                    FormularioAnexo.setStore({
+                        anexosRealizados: anexosRealizados
+                    });
+
+                    registrarEventos();
+                }
+
+                function registrarEventos () {
+                    FormularioAnexo.eventListener.verificaCampoAnexo = function(data) {
+                        anexosRealizados = data;
+                    };
+
+                    Ecm.registraEvento('change', controles.inputs.campo13, onChangeCampo13);
+                    Ecm.registraEvento('change', controles.inputs.campo16, onChangeCampo16);
+                    Ecm.registraEvento('change', controles.inputs.campo17, onChangeCampo17);
+                    Ecm.registraEvento('change', controles.inputs.campo68, onChangeCampo68);
+                    Ecm.registraEvento('click', controles.addNumeroRv, onClickAddNumeroRv);
+                    Ecm.registraEvento('click', '.aba-compra', onClickAbaCompra);
+                    Ecm.registraEvento('click', '.aba-solicitante', onClickAbaSolicitante);
+                    Ecm.registraEvento('click', '.indicacao', onClickIndicacao);
+
+                    //carrega campos do usuario logado no header
+                    setTimeout(() => {
+                        $('.compras input, .compras textarea').removeAttr('placeholder');
+                    }, 200);
+
+                    setTimeout(() => {
+                        $('#CAMPO_1').val(`${Ecm.retornaUsuario().id} - ${Ecm.retornaUsuario().nome}`);
+                        $('#CAMPO_2').val(Ecm.retornaUsuario().grupos.split(',')[0]);
+                    }, 200);
+
+                    //carrega dados do usuario na primeira atividade
+                    setTimeout(() => {
+                        if ( DocumentoVisualizacaoForm.retornaDocumento().atividadeId == 2) {
+                            $('#CAMPO_59').val(Ecm.retornaUsuario().id);
+                            $('#CAMPO_58').val(DocumentoVisualizacaoForm.documentoId());
+                            $('#CAMPO_36').val(Ecm.retornaUsuario().login);
+                            $('#CAMPO_37').val(Ecm.retornaUsuario().nome);
+                            $('#CAMPO_38').val(Ecm.retornaUsuario().email);
+                            $('#CAMPO_39').val(Ecm.retornaUsuario().contato);
+                            $('#CAMPO_40').val(
+                                Ecm.retornaUsuario().grupos.split(',')[0]
+                            );
+                            $('#CAMPO_57').val(Ecm.retornaUsuario().id);
+                        }
+
+                        tabelaGrid.listarGridSalvoNoBanco();
+                    }, 1000);
+
+                    setTimeout(() => {
+                        //se estiver na primeira atividade, ou estiver em outra mas não fora indicado nenhum fornecedor, disponibilizar possibilidade de indicação
+                        if ( DocumentoVisualizacaoForm.retornaDocumento().atividadeId == '2' ) {
+                            $('.indicacao').text('Indicação de Fornecedor?');
+                            $('.dados-fornecedor-indicado').hide();
+                        } else if (
+                            $('#CAMPO_22').val() == '' &&
+                            $('#CAMPO_23').val() == '' &&
+                            $('#CAMPO_24').val() == '' &&
+                            $('#CAMPO_35').val() == ''
+                        ) {
+                            $('.indicacao').text('Indicação de Fornecedor?');
+                            $('.dados-fornecedor-indicado').hide();
+                        } else {
+                            $('.indicacao').text('Fornecedor Indicado');
+                        }
+                    }, 1000);
+
+                    setTimeout(() => {
+                        if (
+                            DocumentoVisualizacaoForm.retornaDocumento().atividadeId > 2
+                        )
+                            carregarHistoricoNaTabela();
+                        else $('#templateTabelaHistorico').hide();
+                    }, 200);
+
+                    setTimeout(() => {
+                        $('#cke_CAMPO_34').hide();
+                    }, 200);
+
+                    //validação data inicio e data fim da vigencia
+                    setTimeout(() => {
+                        $('CAMPO_58').val(DocumentoVisualizacaoForm.documentoId());
+                        $('#CAMPO_28, #CAMPO_29').on('change', function() {
+                            if (
+                                $('#CAMPO_28').val() != '' &&
+                                $('#CAMPO_29').val() != ''
+                            ) {
+                                var dataInicio = $('#CAMPO_28')
+                                    .val()
+                                    .split('/');
+                                var dataFim = $('#CAMPO_29')
+                                    .val()
+                                    .split('/');
+                                var dataInicioFormat = new Date(
+                                    `${dataInicio[2]}-${dataInicio[1]}-${dataInicio[0]}T00:00:00`
+                                );
+                                var dataFimFormat = new Date(
+                                    `${dataFim[2]}-${dataFim[1]}-${dataFim[0]}T00:00:00`
+                                );
+
+                                if (dataInicioFormat > dataFimFormat) {
+                                    Ecm.alertErro(
+                                        'Data de inicio não pode ser maior que a data fim!'
+                                    );
+                                    $('#CAMPO_28').val('');
+                                    $('#CAMPO_29').val('');
+                                }
+                            }
+                        });
+
+                        $('#CAMPO_30, #CAMPO_31').on('change', function() {
+                            if (
+                                $('#CAMPO_30').val() != '' &&
+                                $('#CAMPO_31').val() != ''
+                            ) {
+                                var dataInicio = $('#CAMPO_30')
+                                    .val()
+                                    .split('/');
+                                var dataFim = $('#CAMPO_31')
+                                    .val()
+                                    .split('/');
+                                var dataInicioFormat = new Date(
+                                    `${dataInicio[2]}-${dataInicio[1]}-${dataInicio[0]}T00:00:00`
+                                );
+                                var dataFimFormat = new Date(
+                                    `${dataFim[2]}-${dataFim[1]}-${dataFim[0]}T00:00:00`
+                                );
+
+                                if (dataInicioFormat > dataFimFormat) {
+                                    Ecm.alertErro(
+                                        'Data de inicio não pode ser maior que a data fim!'
+                                    );
+                                    $('#CAMPO_30').val('');
+                                    $('#CAMPO_31').val('');
+                                }
+                            }
+                        });
+                    }, 1000);
+
+                    setTimeout(() => {
+                        if ( DocumentoVisualizacaoForm.retornaDocumento().atividadeId == '2' && $('#CAMPO_9').val() == '') {
+                            numSolicitacoes();
+                            criaNumeroDaSolicitacao();
+                        }
+
+                        $('#CAMPO_9, #CAMPO_36, #CAMPO_37, #CAMPO_10, #CAMPO_1, #CAMPO_2').prop('disabled', true);
+                    }, 300);
+
+                    //deixar campo ACM TBRA invisivel ao carregar a pagina
+                    setTimeout(() => {
+                        if ($('.acm_tbra input').val() == '') {
+                            $('.acm_tbra').hide();
+                        }
+                    }, 400);
+
+                    setTimeout(function () {
+                        $('.gestorContrato').prop('required', true);
+                    }, 1000);
+
+                    setTimeout(() => {
+                        $('#CAMPO_51').on('keypress blur keyup change', function() {
+                            verficaCampoPreenchido(this);
+                        });
+                        $('#CAMPO_22').on('keypress blur keyup change', function() {
+                            verficaCampoPreenchido(this);
+                        });
+                    });
+
+                    setTimeout(() => {
+                        $('#CAMPO_68').on('change', insereIdGestorNoCampo);
+                        $('#CAMPO_28, #CAMPO_29, #CAMPO_30, #CAMPO_31').prop('required', true);
+                    }, 2000);
+
+                    //botoes anexos
+                    $('body').ready(() => $('.field-anexos span').hide());
+
+                    $('.aba-compra').trigger('click');
+                    $('.cancelar').off('click').hide();
+                    $('.js-addNumeroRv').remove();
+
+                    desativarCamposAnexos();
+                    verificarAnexosExistentes();
+
+                    var maximaChecagem = 5;
+                    var tentativas = 0;
+                    var intervalTentativas = setInterval(function () {
+                        ++tentativas;
+                        verificarVigenciaPosProrrogacao(function () {
+                            clearInterval(intervalTentativas);
+                        });
+
+                        if (tentativas >= maximaChecagem)
+                            clearInterval(intervalTentativas);
+                    }, 1000);
+                }
+
+                function onClickAddNumeroRv(event, $element) {
+                    tabelaGrid.btnAdicionarTr($element);
+                }
+
+                function onChangeCampo13(event) {
+                    let modeloCompra = $(event.target)
+                        .find('option:selected')
+                        .text();
+                    configurarModeloCompra(modeloCompra);
+                    eventoVerificaCampoPreenchido(event.target);
+                }
+
+                function onChangeCampo16 (event) {
+                    deixaCamposVermelhosSelect(event.target);
+                }
+
+                function onChangeCampo17(event) {
+                    var value = event.target.value;
+                    deixaCamposVermelhosSelect(event.target);
+                }
+
+                function onChangeCampo68(event) {
+                    var value = event.target.value;
+                    deixaCamposVermelhosSelect(event.target);
+                }
+
+                function onClickAbaCompra(event) {
+                    $('.form-solicitante').fadeOut(200, function() {
+                        $('.form-compra').fadeIn();
+                    });
+
+                    $('.aba-compra')
+                        .parent()
+                        .css({ background: '#d6ddff' });
+                    $('.aba-solicitante')
+                        .parent()
+                        .css({ background: 'none' });
+                }
+
+                function onClickAbaSolicitante(event) {
+                    $('.form-compra').fadeOut(200, function() {
+                        $('.form-solicitante').fadeIn();
+                    });
+
+                    $('.aba-solicitante')
+                        .parent()
+                        .css({ background: '#d6ddff' });
+
+                    $('.aba-compra')
+                        .parent()
+                        .css({ background: 'none' });
+                }
+
+                function onClickIndicacao (event, $element) {
+                    if (event && event.detail !== 1)
+                        return;
+
+                    var $botao = $($element);
+
+                    if ($botao.text() == "Indicação de Fornecedor?") {
+                        $(".dados-fornecedor-indicado").slideDown();
+                        $botao.text("Cancelar Indicação do Fornecedor");
+                        $botao.removeClass("btn-primary");
+                        $botao.addClass("btn-danger");
+                    } else if ($botao.text() == "Fornecedor Indicado") {
+                    } else {
+                        $(".dados-fornecedor-indicado").slideUp();
+                        $botao.text("Indicação de Fornecedor?");
+                        $botao.removeClass("btn-danger");
+                        $botao.addClass("btn-primary");
+                    }
+                }
+
+                function executarFuncao(callback, nTentativas) {
+                    var tentativas = 0;
+                    function subFunc() {
+                        try {
+                            if (tentativas < nTentativas) callback();
+                        } catch {
+                            tentativas++;
+                            setTimeout(subFunc, 800);
+                        }
+                    }
+                    subFunc();
+                }
+
+                function desativarCamposAnexos () {
+                    var $container = $(document.body).find('.field-anexos');
+
+                    $container.find('.label-input-file').addClass('disabled');
+                    $container
+                    .find('input:file')
+                    .removeClass('validate')
+                    .attr('disabled', true);
+                }
+
+                function gravarHistoricoNoHTML(callback) {
+                    gerarHistoricoCampo34();
+
+                    if (typeof callback === 'function') callback();
+                }
+
+                function gerarHistoricoCampo34 () {
+                    if (contadorGravarHist == 0) {
+                        if ($('#obs').val() != '') {
+                            var historico = $('#cke_CAMPO_34 iframe')[0].contentWindow.document.querySelectorAll('html body')[0].textContent;
+                            var dateTime = moment().format('DD/MM/YYYY HH:mm:ss')
+
+                            var usuarioLogado = Ecm.retornaUsuario();
+
+                            var historico2 = [];
+
+                            if (historico == '') {
+                                //se for o primeiro historico, ou seja, se o historico estiver vazio
+                                historico2.push(
+                                    JSON.parse(
+                                        '{ "dataHora": "' +
+                                            dateTime +
+                                            '", "usuario": "' +
+                                            usuarioLogado.nome +
+                                            '", "historico": "' +
+                                            $('#obs').val() +
+                                            '" }'
+                                    )
+                                );
+                                $(
+                                    '#cke_CAMPO_34 iframe'
+                                )[0].contentWindow.document.querySelectorAll(
+                                    'html body'
+                                )[0].textContent = JSON.stringify(historico2);
+                            } else {
+                                //se não for o primeiro historico, ou seja, se o historico estiver preenchido
+
+                                var tempObservacao = JSON.parse(
+                                    '{ "dataHora": "' +
+                                        dateTime +
+                                        '", "usuario": "' +
+                                        usuarioLogado.nome +
+                                        '", "historico": "' +
+                                        $('#obs').val() +
+                                        '" }'
+                                );
+
+                                var tempHistorico = JSON.parse($('#cke_CAMPO_34 iframe')[0].contentWindow.document.querySelectorAll('html body')[0].textContent);
+
+                                if ($('#obs').length <= 0) {
+                                    Ecm.alertErro(
+                                        'Ocorreu um erro ao tentar gravar as informações na tabela.',
+                                        'Erro ao gravar o Histórico',
+                                        3
+                                    );
+                                    return false;
+                                }
+
+                                tempHistorico.push(tempObservacao);
+
+                                $(
+                                    '#cke_CAMPO_34 iframe'
+                                )[0].contentWindow.document.querySelectorAll(
+                                    'html body'
+                                )[0].textContent = JSON.stringify(
+                                    tempHistorico
+                                );
+                            }
+                        }
+                        ++contadorGravarHist;
+                    }
+
+                }
+
+                function carregarHistoricoNaTabela() {
+                    if (contadorFuncao == 0) {
+                        if ($('#cke_CAMPO_34 iframe')[0] != undefined) {
+                            setTimeout(function() {
+                                String.prototype.stripHTML = function() {
+                                    return this.replace(/<.*?>/g, '');
+                                };
+
+                                var tabelaHistorico = $('#tabelaHistorico');
+                                tabelaHistorico.find('td').remove();
+                                var dataSet;
+                                try {
+                                    var campoHistorico = $(
+                                        '#cke_CAMPO_34 iframe'
+                                    )[0].contentWindow.document.querySelectorAll(
+                                        'html body'
+                                    )[0].textContent;
+
+                                    dataSet = JSON.parse(campoHistorico);
+
+                                    atualizarTabelaHistorico(
+                                        tabelaHistorico,
+                                        dataSet
+                                    );
+                                } catch (e) {
+                                    console.log('Tabela Histo não existe!');
+                                    dataSet = '';
+                                    atualizarTabelaHistorico(
+                                        tabelaHistorico,
+                                        dataSet
+                                    );
+                                }
+                            }, 1000);
+                            contadorFuncao++;
+                        } else {
+                            setTimeout(carregarHistoricoNaTabela, 1000);
+                        }
+                    }
+                }
+
+                function atualizarTabelaHistorico(tabelaHistorico, dataSet) {
+                    tabelaHistorico.DataTable({
+                        data: dataSet,
+                        destroy: true,
+                        columns: [
+                            {
+                                data: 'dataHora'
+                            },
+                            {
+                                data: 'usuario'
+                            },
+                            {
+                                data: 'historico'
+                            }
+                        ],
+                        order: [[0, 'desc']],
+                        language: {
+                            aria: {
+                                sortAscending: ': ordenar crescente',
+                                sortDescending: ': ordenar decrescente'
+                            },
+                            emptyTable: 'Nenhum resgistro',
+                            info: '',
+                            infoEmpty: 'Nenhum registro',
+                            infoFiltered: '(filtrado de MAX registros)',
+                            lengthMenu: '',
+                            search: 'Filtrar:',
+                            zeroRecords: 'Nenhum resgistro',
+                            paginate: {
+                                previous: 'Anterior',
+                                next: 'Próximo',
+                                last: 'Ultimo',
+                                first: 'primeiro'
+                            }
+                        }
+                    });
+                }
+
+                function criaNumeroDaSolicitacao() {
+                    var ano = new Date();
+                    var data = [];
+
+                    var anoDoisDig = ano
+                        .getFullYear()
+                        .toString()
+                        .substr(-2);
+
+                    data.push({
+                        Id: 9,
+                        tipoDocumentalId: 35,
+                        colunaTipo: 'C',
+                        comparacao: 7,
+                        valor: anoDoisDig
+                    });
+
+                    var objData = JSON.stringify(data);
+
+                    PesquisaDocumentos(objData);
+                }
+
+                function numSolicitacoes() {
+                    var url_atual = window.location.href;
+                    var token = Ecm.token;
+                    var settings = {
+                        async: false,
+                        url: url_atual.split('Autenticado')[0] + '/api/v2/processos/11/atividades/2/instancias',
+                        method: 'GET',
+                        headers: {
+                            'content-type': 'application/json',
+                            authorization: token
+                        },
+                        processData: false
+                    };
+
+                    $.ajax(settings).done(function(documentos) {
+                        if (documentos.data.length > 1) {
+                            var ultSolicitacao = documentos.data.reduce(
+                                (current, next) => {
+                                    var atual;
+                                    if (typeof current == 'object') {
+                                        let valor = (!current.camposValor.length || !current.camposValor) ? 0 : current.camposValor[8].valor;
+                                        atual = parseInt(valor) || 0;
+                                    } else {
+                                        atual = current;
+                                    }
+
+                                    var prox = next.camposValor.length ? (parseInt(next.camposValor[8].valor) || 0) : 0;
+                                    return atual > prox ? atual : prox;
+                                }
+                            );
+                            solicitacaoAtv1 = ultSolicitacao;
+                        } else {
+                            solicitacaoAtv1 = documentos.data[0].camposValor.length ? (parseInt(documentos.data[0].camposValor[8].valor) || 0) : 0;
+                        }
+
+                        $(controles.inputs.campo10).val(new Date().toLocaleDateString());
+                    });
+                }
+
+                function PesquisaDocumentos(data) {
+                    var url_atual = window.location.href;
+                    var token = Ecm.token;
+
+                    var settings = {
+                        async: false,
+                        url: url_atual.split('Autenticado')[0] + 'api/v2/documentos/pesquisar/35/quantidade/1000/retornarAnexos/true',
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            authorization: token
+                        },
+                        processData: false,
+                        data: data
+                    };
+
+                    $.ajax(settings)
+                        .done(function(response) {
+                            if (response != undefined) {
+                                let lastDoc = response.reduce((current, next) => {
+                                    let atual = parseInt(current.camposValor[8] ? current.camposValor[8].valor : current) || 0;
+                                    let prox = parseInt(next.camposValor[8].valor) || 0;
+                                    return atual > prox ? current : next;
+                                });
+
+                                var campoValorLastDoc = parseInt(lastDoc.camposValor[8].valor) || 0;
+                                lastDoc = campoValorLastDoc > solicitacaoAtv1 ? campoValorLastDoc : solicitacaoAtv1;
+                                $(controles.inputs.campo09).val(lastDoc + 1);
+
+                            } else {
+                                var ano = new Date();
+                                var numSolicNovo = parseInt(ano.getFullYear().toString().substr(-2) + '0000') || 0;
+                                var soli = solicitacaoAtv1 > numSolicNovo ? solicitacaoAtv1 : numSolicNovo;
+                                $(controles.inputs.campo09).val(soli + 1);
+                            }
+                        })
+                        .fail(() => {
+                            var ano = new Date();
+                            var numSolicNovo = parseInt(ano.getFullYear().toString().substr(-2) + '0000') || 0;
+                            var soli = solicitacaoAtv1 > numSolicNovo ? solicitacaoAtv1 : numSolicNovo;
+                            $(controles.inputs.campo09).val(soli + 1);
+                        });
+                }
+
+                function configurarModeloCompra(modeloCompra) {
+                    var camposRequired = [
+                        '#CAMPO_16',
+                        '#CAMPO_17',
+                        '#CAMPO_68',
+                        '#CAMPO_22',
+                        '#CAMPO_51'
+                    ];
+
+                    definirAnexosObrigatorios(modeloCompra);
+
+                    if (modeloCompra == 'Adesão a um contrato vigente (Empresas do Grupo)') {
+                        $('.acm_tbra').slideDown();
+                    } else {
+                        $('.acm_tbra').slideUp();
+                        $('.acm_tbra input').val('');
+                    }
+
+                    if (modeloCompra != 'Nova Contratação') {
+                        camposRequired.forEach(campo => {
+                            deixaCamposVermelhosSelect(campo);
+                        });
+                    } else {
+                        ['#CAMPO_51', '#CAMPO_22'].forEach(campo => {
+                            $(campo).val('');
+                            $(campos).prop('required', false);
+                            $(campos).css({
+                                border: 'none',
+                                borderBottom: '1px solid #c2cad8'
+                            });
+                        });
+                    }
+
+                    camposRequired.forEach(campo => {
+                        eventoVerificaCampoPreenchido(campo);
+                    });
+                }
+
+                function eventoVerificaCampoPreenchido(campo) {
+                    if ($(campo).attr('id') == 'CAMPO_13') {
+                        deixaCamposVermelhosSelect('#CAMPO_16');
+                        deixaCamposVermelhosSelect('#CAMPO_17');
+                        deixaCamposVermelhosSelect('#CAMPO_68');
+                        $('#CAMPO_16').prop('disabled', false);
+                    } else {
+                        $(campo).on('keyup', function() {
+                            deixaCamposVermelhosSelect(campo);
+                        });
+                    }
+                }
+
+                function deixaCamposVermelhosSelect(campo) {
+                    let modeloCompra = $('#CAMPO_13 option:selected').text();
+                    let campoValor = $(
+                        `#${$(campo).attr('id')} option:selected`
+                    ).text();
+                    if (
+                        DocumentoVisualizacaoForm.retornaDocumento().atividadeId ==
+                        2
+                    ) {
+                        if (
+                            modeloCompra != 'Nova Contratação' &&
+                            (campoValor == 'Selecione' || campoValor == '')
+                        ) {
+                            if (campo) {
+                                $(campo).css({ border: '2px solid red' });
+                                $(campo).prop('required', true);
+                            }
+                        } else {
+                            $(campo).css({
+                                border: 'none',
+                                borderBottom: '1px solid #c2cad8'
+                            });
+                            $(campo).prop('required', false);
+                        }
+                    }
+                }
+
+                function ordenaSelect(campo) {
+                    $(campo)
+                        .find('option')
+                        .each((i, option) => {
+                            if ($(option).text() == 'Selecione') {
+                                $(option).insertBefore(
+                                    $(campo + ' option').first()
+                                );
+                            }
+                        });
+                }
+
+                function executarFuncao(callback, qtdTry, interval = 50) {
+                    var counter = 0;
+                    function subFunc(exeCall) {
+                        try {
+                            exeCall();
+                            counter++;
+                        } catch {
+                            if (counter <= qtdTry)
+                                setTimeout(() => subFunc(exeCall), interval);
+                            console.log('tentativas...');
+                        }
+                    }
+                    subFunc(callback);
+                }
+
+                function definirAnexosObrigatorios(modeloCompra) {
+                    anexosObrigatorios = new Set();
+                    $('.label-input-file').removeClass('required');
+
+                    switch (modeloCompra) {
+                        case 'Adesão a um contrato vigente (Empresas do Grupo)':
+                        case 'Alteração de objeto contratual (inclusão de escopo)': {
+                            anexosObrigatorios = new Set([
+                                'MEMORANDO-CONDICIONAMENTO',
+                                'PXQ',
+                                'RV-APROVADA'
+                            ]);
+                            break;
+                        }
+                        case 'Negociação de reajuste': {
+                            anexosObrigatorios = new Set([
+                                'MEMORANDO-CONDICIONAMENTO',
+                                'PXQ',
+                                'RV-APROVADA',
+                                'ACORDO-CDG'
+                            ]);
+                            break;
+                        }
+                        case 'Normativas': {
+                            anexosObrigatorios = new Set(['PXQ']);
+                            break;
+                        }
+                        case 'Nova Contratação': {
+                            anexosObrigatorios = new Set([
+                                'MEMORANDO-CONDICIONAMENTO',
+                                'PROJETO-BASICO',
+                                'PXQ',
+                                'RV-APROVADA'
+                            ]);
+                            break;
+                        }
+                        case 'Prorrogação de vigência contratual': {
+                            anexosObrigatorios = new Set([
+                                'MEMORANDO-CONDICIONAMENTO',
+                                'PXQ',
+                                'RV-APROVADA'
+                            ]);
+                            break;
+                        }
+                        case 'Prorrogação de vigência do contrato SAP para regularização de pagamento de NF':
+                        case 'Regularização de Compra':
+                        case 'Prorrogação de vigência contratual com suplementação de verba':
+                        case 'Remanejamento de Verba entre contratos':
+                        case 'Suplementação de verba dentro de vigência contratual': {
+                            anexosObrigatorios = new Set([
+                                'MEMORANDO-CONDICIONAMENTO',
+                                'PXQ',
+                                'RV-APROVADA'
+                            ]);
+                            break;
+                        }
+                        default:
+                            break;
+                    }
+
+                    $('#js-listagem-anexos li').each((id, element) => {
+                        var $el = $(element);
+                        var state = $el.data('state');
+
+                        if (state && state.anexo) {
+                            var nameAnexo = state.anexo.nomeOriginal;
+                            nameAnexo = nameAnexo
+                                ? nameAnexo.split('.')[0]
+                                : null;
+                            nameAnexo && anexosRealizados.add(nameAnexo);
+                        }
+                    });
+
+
+                    if (anexosObrigatorios.size > 0) {
+                        anexosObrigatorios.forEach(nameAnexo => {
+                            $(`[${nameAnexo}]`).addClass('anexo-obrigatorio');
+                        });
+                    }
+
+                    if (anexosObrigatorios.size > 0) {
+                        anexosObrigatorios.forEach(function(nameAnexo) {
+                            $('.label-input-file[for="' + nameAnexo + '"]').addClass('required');
+                        });
+                    }
+                }
+
+                function verificarAnexosExistentes () {
+                    $('#js-listagem-anexos li').each((id, element) => {
+                        var $el = $(element);
+                        var state = $el.data('state');
+
+                        if (state && state.anexo) {
+                            var nameAnexo = state.anexo.nomeOriginal;
+                            nameAnexo = nameAnexo ? nameAnexo.split('.')[0] : null;
+
+                            $(document.body).find('[for="' + nameAnexo + '"]').addClass('blue');
+                        }
+                    });
+                }
+
+                function diferenca(setA, setB) {
+                    var _diferenca = new Set(setA);
+
+                    for (var elem of setB) {
+                        _diferenca.delete(elem);
+                    }
+                    return _diferenca;
+                }
+
+                function verificaAnexosNaoEnviados(event) {
+                    var anexosMensagem = '';
+
+                    if (DocumentoVisualizacaoForm.retornaDocumento().atividadeId == 2 && $('#CAMPO_13').val() != '') {
+                        if (DocumentoVisualizacaoForm.retornaDocumento().atividadeId != 2 || anexosRealizados.size >= anexosObrigatorios.size) {
+
+                            var anexosNaoEnviados = diferenca(
+                                anexosObrigatorios,
+                                anexosRealizados
+                            );
+
+                            if (DocumentoVisualizacaoForm.retornaDocumento().atividadeId == 2 && anexosNaoEnviados.size > 0) {
+                                anexosNaoEnviados.forEach(nomeAnexo => (anexosMensagem += nomeAnexo + '<br>'));
+
+                                Ecm.alertErro(`Envie os anexos Obrigatórios! ${toTitleCase(anexosMensagem)}`);
+                            } else {
+                                gravarHistoricoNoHTML(function() {
+                                    var getId ='#' + $(event.target).attr('id');
+                                    DocumentoVisualizacaoForm.publicarSaida(getId);
+                                });
+                            }
+                        } else {
+                            var anexosNaoEnviados = diferenca(
+                                anexosObrigatorios,
+                                anexosRealizados
+                            );
+                            anexosNaoEnviados.forEach(nomeAnexo => (anexosMensagem += nomeAnexo + '<br>'));
+
+                            Ecm.alertErro(`Envie os anexos Obrigatórios! <br> ${toTitleCase(anexosMensagem)}`);
+                        }
+                    } else if ($('#CAMPO_13').val() == '') {
+                        Ecm.alertErro(
+                            `preencha o modelo de compra e os campos Obrigatórios!<br> ${toTitleCase(
+                                anexosMensagem
+                            )}`
+                        );
+                    } else {
+                        gravarHistoricoNoHTML(function() {
+                            var getId ='#' + $(event.target).attr('id');
+                            DocumentoVisualizacaoForm.publicarSaida(getId);
+                        });
+                    }
+                }
+
+                function toTitleCase(str) {
+                    return str
+                        .toLowerCase()
+                        .replace(/(?:^|\s)\w/g, function(match) {
+                            return match.toUpperCase();
+                        });
+                }
+
+                function verficaCampoPreenchido(campo) {
+                    if (campo.value == '') {
+                        $(campo).css({ border: '2px solid red' });
+                        $(campo).prop('required', true);
+                    } else {
+                        $(campo).css({
+                            border: '1px solid #c2cad8'
+                        });
+                        $(campo).prop('required', false);
+                    }
+                }
+
+                function insereIdGestorNoCampo() {
+                    let idGrupo;
+
+                    var estruturaBeneficiada = $('#CAMPO_16')
+                        .find('option:selected')
+                        .text();
+
+                    let nomeGestorContrato = $('#CAMPO_68')
+                        .find('option:selected')
+                        .text();
+
+                    let token = Ecm.token;
+
+                    var url_atual = window.location.href;
+                    var settings = {
+                        url: url_atual.split('Autenticado')[0] + 'api/v2/grupos',
+                        method: 'GET',
+                        timeout: 0,
+                        headers: {
+                            'content-type': 'application/json',
+                            authorization: token
+                        }
+                    };
+
+                    $.ajax(settings).done(function(grupo) {
+                        let grupoSelecionado = grupo.filter(g => g.nome == estruturaBeneficiada);
+                        idGrupo = grupoSelecionado[0].id;
+
+                        Ecm.retornaUsuariosDoGrupo(idGrupo, response => {
+                            let gestorSelecionado = response.usuarios.filter(user => user.Nome == nomeGestorContrato);
+                            let idUsuario = gestorSelecionado[0].Id;
+                            $('#CAMPO_69').val(idUsuario);
+                        });
+                    });
+                }
+
+                function verificarVigenciaPosProrrogacao (callback) {
+                    var $inicio = $(controles.inputs.campo30);
+                    var $fim = $(controles.inputs.campo31);
+
+                    var valorInicial = $inicio.val();
+                    var valorFinal = $fim.val();
+
+                    if (valorInicial || valorFinal) return;
+
+                    setTimeout(function () {
+                        $inicio.prop('required', false);
+                        $fim.prop('required', false);
+                        $inicio.removeAttr('required');
+                        $fim.removeAttr('required');
+                    }, 1500);
+
+                    if (typeof callback === 'function') callback();
+                }
+
+                function onClickSalvar(event) {
+                    var $btn = $('.botoes').find('.salvar');
+                    gerarHistoricoCampo34();
+                    //para gerar o historico antes de salvar
+                    setTimeout(() => $btn.trigger('click'), 300);
+                }
+
+                function onClickTransicaoId (event) {
+                    var getId ='#' + $(event.target).attr('id');
+                    gerarHistoricoCampo34();
+                    //para gerar o historico antes de salvar
+                    setTimeout(() => DocumentoVisualizacaoForm.publicarSaida(getId), 300);
+                    ;
+                }
+
+                function renderizarBotaoSuperior (transicaoSaidas) {
+                    var $container = $('.botoes');
+                    $container.find('.btn-superior').remove();
+                    $container.find('.btn').hide();
+
+                    var $btnSalvar = $('<a />');
+
+                    $btnSalvar
+                        .attr('href', 'javascript:')
+                        .addClass('btn btn-sm btn-primary green btn-superior')
+                        .css({
+                            'display': 'inline-block',
+                            'margin-right': '10px'
+                        })
+                        .on('click', onClickSalvar)
+                        .html('Salvar');
+
+                    $btnSalvar.appendTo($container);
+
+                    for (var index in transicaoSaidas) {
+                        var saida = transicaoSaidas[index];
+                        var $sd = $(document.body).find('#transicao-id-' + saida.Id);
+
+                        if (!$sd.length)
+                            continue;
+
+                        var $btnTransacaoSaida = $('<a />');
+                        $btnTransacaoSaida
+                        .attr('id', 'transicao-id-' + saida.Id)
+                        .attr('href', 'javascript:')
+                        .addClass('btn btn-sm btn-primary btn-superior')
+                        .css({
+                            'display': 'inline-block',
+                            'margin-right': '10px',
+                            'background-color': saida.Cor,
+                            'border-color': saida.Cor,
+                        })
+                        .on('click', verificaAnexosNaoEnviados)
+                        .html(saida.Nome);
+
+                        $btnTransacaoSaida.appendTo($container);
+                    }
+                }
+
+                function renderizarBotaoInferior (transicaoSaidas) {
+                    var $tabPane = $('.tab-pane');
+                    $tabPane.find('.btn-inferior').remove();
+
+                    var $btnSalvar = $('<a />');
+
+                    $btnSalvar
+                        .attr('href', 'javascript:')
+                        .addClass('btn btn-sm btn-primary green btn-inferior')
+                        .css({
+                            'display': 'inline-block',
+                            'margin-right': '10px'
+                        })
+                        .on('click', onClickSalvar)
+                        .html('Salvar');
+
+                    $btnSalvar.appendTo($tabPane);
+
+                    for (var index in transicaoSaidas) {
+                        var saida = transicaoSaidas[index];
+                        var $sd = $(document.body).find('#transicao-id-' + saida.Id);
+
+                        if (!$sd.length)
+                            continue;
+
+                        var $btnTransacaoSaida = $('<a />');
+                        $btnTransacaoSaida
+                        .attr('id', 'transicao-id-' + saida.Id)
+                        .attr('href', 'javascript:')
+                        .addClass('btn btn-sm btn-primary btn-inferior')
+                        .css({
+                            'display': 'inline-block',
+                            'margin-right': '10px',
+                            'background-color': saida.Cor,
+                            'border-color': saida.Cor,
+                        })
+                        .on('click', onClickTransicaoId)
+                        .html(saida.Nome);
+
+                        $btnTransacaoSaida.appendTo($('.tab-pane'));
+                    }
+                }
+
+                function retornaAtividadeSaidasSuccesso (props) {
+                    renderizarBotaoSuperior(props.transicaoSaidas);
+                    renderizarBotaoInferior(props.transicaoSaidas);
+                }
+
+                return {
+                    init: init,
+                    retornaAtividadeSaidasSuccesso: retornaAtividadeSaidasSuccesso,
+                };
+            })();
+
+            DocumentoVisualizacaoForm.eventListerner.retornaAtividadeSaidasSuccesso = FormularioAprovacaoGestor.retornaAtividadeSaidasSuccesso;
+            DocumentoVisualizacaoForm.camposCarregados(FormularioAprovacaoGestor.init);
+        </script>
+    </body>
+</html>

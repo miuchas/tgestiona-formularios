@@ -1,0 +1,7 @@
+[fase 1]
+    - Estrutura Beneficiada (dropdown)
+        - [DIR, LG*2, LG*3, LG*4]
+            não existe nenhuma lista vinculado a ela, o que fazer?
+
+    - Seleção de Fornecedores (dropdown)
+        caso a opção seja [sem indicação] os campos cnpj ainda devem ser obrigatorios em determinado modelo de compras?
